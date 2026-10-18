@@ -23,9 +23,9 @@
 .img-logoPrincipal {
     display: block;
     align-self: center;
-    width: min(340px, 100%);
+    width: min(280px, 75%);
     height: auto;
-    margin: 8px 0;
+    margin: 6px 0;
 }
 
 .barraNavegacion-1-1 {
@@ -126,20 +126,20 @@
     }
 
     .img-logoPrincipal {
-        margin: 8px 0;
+        margin: 6px 0;
     }
 
     .boton-menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 5px;
-        width: 48px;
-        height: 48px;
+        gap: 6px;
+        width: 52px;
+        height: 52px;
         padding: 12px;
-        border: 2px solid #bda146;
-        border-radius: 4px;
-        background: #bda146;
+        border: none;
+        border-radius: 10px;
+        background: #bd9a2a;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
@@ -153,8 +153,9 @@
     .boton-menu span {
         display: block;
         width: 100%;
-        height: 2px;
-        background: #fffcfc;
+        height: 3px;
+        background: #ffffff;
+        border-radius: 2px;
         transition: transform 0.5s ease, opacity 0.2s ease;
     }
 
@@ -196,7 +197,7 @@
     }
 
     .menu-toggle:checked+.boton-menu span:first-child {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(9px) rotate(45deg);
     }
 
     .menu-toggle:checked+.boton-menu span:nth-child(2) {
@@ -204,7 +205,7 @@
     }
 
     .menu-toggle:checked+.boton-menu span:last-child {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
 
@@ -912,7 +913,7 @@
     padding: 16px 20px;
     border: none;
     background-color: #ffffff;
-    color: #333333;
+    color: #ffffff;
     border-radius: 8px;
     font-size: 17px;
 }
@@ -923,12 +924,14 @@
     box-shadow: 0 0 0 3px #cfb268;
 }
 
-.filaDobleFormulario {
+.filaDobleFormulario,
+.grupoDoble {
     display: flex;
     gap: 25px;
 }
 
-.filaDobleFormulario .campoFormulario {
+.filaDobleFormulario .campoFormulario,
+.grupoDoble>* {
     flex: 1;
 }
 
@@ -1014,6 +1017,24 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cuerpoModal {
+        width: 95%;
+        padding: 25px 20px;
+        max-height: 95vh;
+    }
+
+    .filaDobleFormulario,
+    .grupoDoble {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabeceraModal h2 {
+        font-size: 24px;
     }
 }
 
