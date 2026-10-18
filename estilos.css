@@ -848,12 +848,14 @@
     box-shadow: 0 0 0 3px #cfb268;
 }
 
-.filaDobleFormulario {
+.filaDobleFormulario,
+.grupoDoble {
     display: flex;
     gap: 25px;
 }
 
-.filaDobleFormulario .campoFormulario {
+.filaDobleFormulario .campoFormulario,
+.grupoDoble > * {
     flex: 1;
 }
 
@@ -912,11 +914,19 @@
     transition: background-color 0.3s ease;
 }
 
-.botonEnviarManager:hover {
+.botonEnviarModal:hover {
     background-color: #b89c55;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
+    .contactos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proceso-etapas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .contenedorPiePaginaSuperior {
         flex-direction: column;
         text-align: center;
@@ -930,6 +940,157 @@
     .franjaDoradaInferior {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cuerpoModal {
+        width: 95%;
+        padding: 25px 20px;
+        max-height: 95vh;
+    }
+
+    .filaDobleFormulario,
+    .grupoDoble {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabeceraModal h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 712px) {
+    .seccion-tarjeta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 28px 28px 10px;
+    }
+
+    .sobre-nosotros-diseno {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .sobre-nosotros-contenido {
+        padding: 0;
+    }
+
+    .sobre-nosotros-visual {
+        width: min(100%, 520px);
+        margin: 0 auto;
+    }
+
+    .proceso-etapa {
+        min-height: 0;
+    }
+
+    .seccion-imagen {
+        max-height: 300px;
+    }
+
+    .seccion-imagen img {
+        width: min(100%, 300px);
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-comoTrabajamos,
+    .sobre-nosotros,
+    .contactos-destacados {
+        padding: 56px 20px;
+    }
+
+    .seccion-contenido h2,
+    .contactos-cabecera h2 {
+        font-size: 30px;
+    }
+
+    .sobre-nosotros {
+        padding: 56px 20px;
+    }
+
+    .sobre-nosotros-contenido h2 {
+        font-size: 34px;
+    }
+
+    .sobre-nosotros-contenido>p:not(.seccion-etiqueta) {
+        margin-top: 18px;
+        font-size: 16px;
+    }
+
+    .sobre-nosotros-visual {
+        padding: 0 0 30px 18px;
+    }
+
+    .sobre-nosotros-visual>img {
+        border-radius: 64px 8px 44px 8px;
+    }
+
+    .sobre-nosotros-casos {
+        width: 150px;
+        min-height: 150px;
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .sobre-nosotros-casos svg {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .sobre-nosotros-casos strong {
+        font-size: 32px;
+    }
+
+    .sobre-nosotros-casos span {
+        font-size: 14px;
+    }
+
+    .seccion-tarjeta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        padding: 20px 20px 10px;
+    }
+
+    .proceso-etapas {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .proceso-etapa {
+        padding: 22px;
+    }
+
+    .seccion-imagen {
+        display: none;
+    }
+
+    .seccion-contenido {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 14px 0 0;
+    }
+
+    .contactos-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 16px;
+    }
+
+    .contacto-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 340px);
+        aspect-ratio: 1;
+        min-height: auto;
         text-align: center;
     }
 }
