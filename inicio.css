@@ -339,13 +339,6 @@
     }
 }
 
-@media (max-width: 368px) {
-    .img-logoPrincipal {
-        width: 200px;
-        margin: 8px 0;
-    }
-}
-
 .info-comoTrabajamos,
 .sobre-nosotros {
     padding: 76px 20px;
